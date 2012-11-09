@@ -18,7 +18,7 @@ function formulaires_prix_declinaison_charger_dist($id_objet,$objet='article'){
 	//établit les devises diponible moins ceux déjà utilisés
 		
 	while($row=sql_fetch($d)){
-		$devises_choisis[$row['code_devise']] = $row['code_devise'];
+		//$devises_choisis[$row['code_devise']] = $row['code_devise'];
 
 		$prix_choisis[]=$row;
 			
@@ -28,28 +28,28 @@ function formulaires_prix_declinaison_charger_dist($id_objet,$objet='article'){
 		
 	$devises = array_diff($devises_dispos,$devises_choisis);
 	
-	
-	$valeurs = array(
+		$valeurs = array(
 		'prix_choisis'=>$prix_choisis,
 	    'id_declinaison'=>'',
 		'devises'=>$devises,	
 		'code_devise'=>'',
 		'prix_ht'=>'',									
 		);
+
 	return $valeurs;			
 }
 
 
 function formulaires_prix_declinaison_verifier_dist($id_objet,$objet='article'){
-
+    $valeurs=array();
 	foreach(array('prix','code_devise') as $obligatoire)
 	
-	if (!_request($obligatoire)) $erreurs[$obligatoire] = _T('encheres:champ_obligatoire');	
+	if (!_request($obligatoire)) $valeurs[$obligatoire] = _T('encheres:champ_obligatoire');	
 		
-    return $erreurs; // si c'est vide, traiter sera appele, sinon le formulaire sera resoumis
+    return $valeurs; // si c'est vide, traiter sera appele, sinon le formulaire sera resoumis
 }
 
-/*Elimination de la base de donées */
+
 function formulaires_prix_declinaison_traiter_dist($id_objet,$objet='article'){
 	$valeurs=array(
 		'id_objet'=>$id_objet,
@@ -58,7 +58,8 @@ function formulaires_prix_declinaison_traiter_dist($id_objet,$objet='article'){
 		'code_devise' => _request('code_devise'),
         'id_declinaison' => _request('id_declinaison'),		
 		);
-	sql_insertq('spip_prix', $valeurs);
+	$id_prix=sql_insertq('spip_prix', $valeurs);
+    return $valeurs;
 }
 
 ?>

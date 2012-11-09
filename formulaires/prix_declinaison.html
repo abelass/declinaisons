@@ -1,22 +1,41 @@
-<div class="formulaire_spip #ENV{form} liste">
+<div class="formulaire_spip liste ajax">
 <B_prix>
-    <h3 class="titrem"><:shop:prix_choisis:></h3>
-		<ul style="list-style:none;">
-		<BOUCLE_prix(POUR){tableau #ENV{prix_choisis}}>
-			<li>
-				<span>[(#VALEUR|table_valeur{prix_ht})]</span>&nbsp;<span>[(#VALEUR|table_valeur{code_devise}|traduire_devise)]</span><a class="ajax" href="[(#URL_ACTION_AUTEUR{eliminer_prix,[(#VALEUR|table_valeur{id_prix})],[(#SELF|parametre_url{retour_action,oui})]})]#prix"> <img src="#CHEMIN_IMAGE{supprimer-12.png}" /></a>[(#VALEUR|table_valeur{id_declinaison})]
-			<BOUCLE_declinaisons_sel(DECLINAISONS){id_declinaison=#VALEUR{id_declinaison}}>
-                #TITRE
-            </BOUCLE_declinaisons_sel>	
-			</li>
 
+    <table class='spip liste'>    
+
+       <caption><strong class="caption"><:shop:prix_choisis:></strong></caption>
+         <thead>
+            <tr class='first_row'>
+                <th class='prix' scope='col'><:shop:prix_ht:></th>
+                <th class='statut' scope='col'><:shop:devises_choisis:></th> 
+                <th class='titre' scope='col'><:declinaison:label_titre:></th>
+                <th class='titre' scope='col'><:shop:supprimer:></th>
+            </tr>
+        </thead>
+     <tbody>
+		<BOUCLE_prix(POUR){tableau #ENV{prix_choisis}}>
+			<tr class='[(#COMPTEUR_BOUCLE|alterner{row_odd,row_even})]'>
+				<td>[(#VALEUR|table_valeur{prix_ht})]</td>
+				<td>[(#VALEUR|table_valeur{code_devise}|traduire_devise)]</td>
+				<td>
+				    <BOUCLE_declinaisons_sel(DECLINAISONS){id_declinaison=#VALEUR{id_declinaison}}>
+                        #TITRE
+                       </BOUCLE_declinaisons_sel>  
+            </td>
+            <td>
+				<a class="ajax" href="[(#URL_ACTION_AUTEUR{eliminer_prix,[(#VALEUR|table_valeur{id_prix})],[(#SELF|parametre_url{retour_action,oui})]})]#prix" title="<:shop:supprimer:>"> <img src="#CHEMIN_IMAGE{supprimer-12.png}" /></a>
+				</td>
+
+            </tr>
 		</BOUCLE_prix>
-		</ul>
+    </tbody>
+</table>
+
 </B_prix>
 
 
     <h3 class="titrem"><:shop:ajouter_prix:></h3>
-	<form id="form_prix" name="form_prix" action="[(#SELFparametre_url{retour_action,''})]#prix" method="post"/>
+	<form id="form_prix" name="form_prix" action="#ENV{action}#form_prix" method="post"><div>
     		#ACTION_FORMULAIRE{#ENV{action}}
 
 			<label><:shop:choix_prix:></label>
@@ -51,9 +70,7 @@
                 <option value="#ID_DECLINAISON"[(#ID_DECLINAISON|=={#ENV{id_declinaison}}|oui) selected="selected"]>#TITRE</option>
             </BOUCLE_declinaisons>
         </select>
-		<p><input type="submit"  class="submit" value="<:pg:envoyer:>" /></p>
+		<p><input type="submit"  class="submit" value="<:pg:envoyer:>" /></p></div>
 	</form>
 
-<B_prix>
-	
-
+</div>
