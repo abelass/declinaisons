@@ -4,7 +4,7 @@ if (!defined("_ECRIRE_INC_VERSION")) return;
 
 
 function formulaires_prix_declinaison_charger_dist($id_objet,$objet='article'){
-
+    include_spip('inc/config');
 
 	$devises_dispos =lire_config('shop/devises');
 	
@@ -13,7 +13,7 @@ function formulaires_prix_declinaison_charger_dist($id_objet,$objet='article'){
 	if(!$devises_dispos)$devises_dispos=array('0'=>'EUR');
 	$devises_choisis =array();	
 	$prix_choisis =array();		
-	$d=sql_select('code_devise,objet,id_objet,prix_ht,id_prix','spip_prix','id_objet='.$id_objet.' AND objet ='.sql_quote($objet));
+	$d=sql_select('code_devise,objet,id_objet,prix_ht,id_prix,id_declinaison','spip_prix','id_objet='.$id_objet.' AND objet ='.sql_quote($objet));
 	
 	//établit les devises diponible moins ceux déjà utilisés
 		
@@ -31,7 +31,7 @@ function formulaires_prix_declinaison_charger_dist($id_objet,$objet='article'){
 	
 	$valeurs = array(
 		'prix_choisis'=>$prix_choisis,
-	
+	    'id_declinaison'=>'',
 		'devises'=>$devises,	
 		'code_devise'=>'',
 		'prix_ht'=>'',									
@@ -54,8 +54,9 @@ function formulaires_prix_declinaison_traiter_dist($id_objet,$objet='article'){
 	$valeurs=array(
 		'id_objet'=>$id_objet,
 		'objet'=>$objet,	
-		'prix' => _request('prix'),
-		'code_devise' => _request('code_devise')
+		'prix_ht' => _request('prix'),
+		'code_devise' => _request('code_devise'),
+        'id_declinaison' => _request('id_declinaison'),		
 		);
 	sql_insertq('spip_prix', $valeurs);
 }

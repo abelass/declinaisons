@@ -1,25 +1,27 @@
-2
 <div class="formulaire_spip #ENV{form} liste">
 <B_prix>
     <h3 class="titrem"><:shop:prix_choisis:></h3>
 		<ul style="list-style:none;">
 		<BOUCLE_prix(POUR){tableau #ENV{prix_choisis}}>
 			<li>
-				<span>[(#VALEUR|table_valeur{prix})]</span>&nbsp;<span>[(#VALEUR|table_valeur{code_devise}|traduire_devise)]</span><a class="ajax" href="[(#URL_ACTION_AUTEUR{eliminer_prix,[(#VALEUR|table_valeur{id_prix})],[(#SELF|parametre_url{retour_action,oui})]})]#prix"> <img src="#CHEMIN_IMAGE{supprimer-12.png}" /></a>
+				<span>[(#VALEUR|table_valeur{prix_ht})]</span>&nbsp;<span>[(#VALEUR|table_valeur{code_devise}|traduire_devise)]</span><a class="ajax" href="[(#URL_ACTION_AUTEUR{eliminer_prix,[(#VALEUR|table_valeur{id_prix})],[(#SELF|parametre_url{retour_action,oui})]})]#prix"> <img src="#CHEMIN_IMAGE{supprimer-12.png}" /></a>[(#VALEUR|table_valeur{id_declinaison})]
+			<BOUCLE_declinaisons_sel(DECLINAISONS){id_declinaison=#VALEUR{id_declinaison}}>
+                #TITRE
+            </BOUCLE_declinaisons_sel>	
 			</li>
 
 		</BOUCLE_prix>
 		</ul>
 </B_prix>
 
-<BOUCLE_test0(CONDITION){si #ENV{devises}|count|>{0}}>
+
     <h3 class="titrem"><:shop:ajouter_prix:></h3>
 	<form id="form_prix" name="form_prix" action="[(#SELFparametre_url{retour_action,''})]#prix" method="post"/>
     		#ACTION_FORMULAIRE{#ENV{action}}
 
 			<label><:shop:choix_prix:></label>
-			[<div class='erreur_message'>(#ENV**{erreurs}|table_valeur{prix})</div>]
-			[<div class='erreur_message'>(#ENV**{erreurs}|table_valeur{code_devise})</div>]
+			[<span class='erreur_message'>(#ENV**{erreurs}|table_valeur{prix})</span>]
+			
 			<span>
 				<input type="text" name="prix" value="#ENV{prix}"/>
 			</span>
@@ -28,6 +30,7 @@
 				[(#ENV{devises}|table_valeur{0}|traduire_devise)]
 				<input type="hidden" name="code_devise" value="[(#ENV{devises}|table_valeur{0})]"/>
 				</BOUCLE_test>
+				[<span class='erreur_message'>(#ENV**{erreurs}|table_valeur{code_devise})</s>]
 				<B_selection>
 					<select name="code_devise">
 						<option value=""><:shop:choix_devise:></option>
@@ -38,12 +41,19 @@
 				</B_selection>					
 				<//B_test>
 			</span>	
-
+        
+        [(#ENV{multiple}|oui)
+    [(#SET{valeur,[(#ENV*{valeur}|is_array|?{[(#ENV*{valeur})],[(#ENV*{valeur}|explode{','})]})]})]
+]
+        <select name="id_declinaison" id="id_declinaison"  class="id_declinaison" size="1">
+                <option value=""><:declinaison:choisir_declinaison:></option>
+            <BOUCLE_declinaisons(DECLINAISONS){par num titre, titre}>
+                <option value="#ID_DECLINAISON"[(#ID_DECLINAISON|=={#ENV{id_declinaison}}|oui) selected="selected"]>#TITRE</option>
+            </BOUCLE_declinaisons>
+        </select>
 		<p><input type="submit"  class="submit" value="<:pg:envoyer:>" /></p>
 	</form>
-</BOUCLE_test0>
-<B_prix>		
-</div>
-	
+
+<B_prix>
 	
 
