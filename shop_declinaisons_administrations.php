@@ -59,9 +59,9 @@ function shop_declinaisons_vider_tables($nom_meta_base_version) {
 	sql_drop_table("spip_declinaisons");
 
 	# Nettoyer les versionnages et forums
-	sql_delete("spip_versions",              sql_in("objet", array('id')));
-	sql_delete("spip_versions_fragments",    sql_in("objet", array('id')));
-	sql_delete("spip_forum",                 sql_in("objet", array('id')));
+	sql_delete("spip_versions",              sql_in("objet", array('declinaison')));
+	sql_delete("spip_versions_fragments",    sql_in("objet", array('declinaison')));
+	sql_delete("spip_forum",                 sql_in("objet", array('declinaison')));
 
 	effacer_meta($nom_meta_base_version);
 }

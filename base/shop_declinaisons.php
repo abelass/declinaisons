@@ -25,17 +25,17 @@ function shop_declinaisons_declarer_tables_interfaces($interfaces) {
 function shop_declinaisons_declarer_tables_objets_sql($tables) {
 
 	$tables['spip_declinaisons'] = array(
-		'type' => 'id',
+		'type' => 'declinaison',
 		'principale' => "oui",
 		'field'=> array(
-			"id"                 => "bigint(21) NOT NULL",
-			"titre"              => "varchar(250) not null default """,
+			"id_declinaison"     => "bigint(21) NOT NULL",
+			"titre"              => "varchar(250)  DEFAULT '' NOT NULL",
 			"descriptif"         => "text NOT NULL",
 			"statut"             => "varchar(20)  DEFAULT '0' NOT NULL", 
 			"maj"                => "TIMESTAMP"
 		),
 		'key' => array(
-			"PRIMARY KEY"        => "id",
+			"PRIMARY KEY"        => "id_declinaison",
 			"KEY statut"         => "statut", 
 		),
 		'titre' => "titre AS titre, '' AS lang",
@@ -60,7 +60,7 @@ function shop_declinaisons_declarer_tables_objets_sql($tables) {
 				'exception' => array('statut','tout')
 			)
 		),
-		'texte_changer_statut' => 'id:texte_changer_statut_id', 
+		'texte_changer_statut' => 'declinaison:texte_changer_statut_declinaison', 
 		
 
 	);

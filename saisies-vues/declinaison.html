@@ -2,19 +2,19 @@
 	[(#SET{valeur,[(#ENV*{valeur}|is_array|?{[(#ENV*{valeur})],[(#ENV*{valeur}|explode{','})]})]})]
 	<B_declinaison_selectionnes>
 	<ul>
-	<BOUCLE_declinaison_selectionnes(DECLINAISON){id IN #GET*{valeur}}
+	<BOUCLE_declinaison_selectionnes(DECLINAISON){id_declinaison IN #GET*{valeur}}
 		{par num titre, titre}{statut?}{tout}>
-		<li class="choix">#TITRE (#ID)</li>
+		<li class="choix">#TITRE (#ID_DECLINAISON)</li>
 	</BOUCLE_declinaison_selectionnes>
 	</ul>
 	</B_declinaison_selectionnes>
    	[(#ENV*{sans_reponse}|propre)]
 	<//B_declinaison_selectionnes>
 </BOUCLE_test_multiple>
-	<BOUCLE_id_selectionne(DECLINAISON){id=#ENV{valeur}}
+	<BOUCLE_declinaison_selectionne(DECLINAISON){id_declinaison=#ENV{valeur}}
 		{par num titre, titre}{statut?}{tout}>
-	  	<p>#TITRE (#ID)</p>
-	</BOUCLE_id_selectionne>
+	  	<p>#TITRE (#ID_DECLINAISON)</p>
+	</BOUCLE_declinaison_selectionne>
    	[(#ENV*{sans_reponse}|propre)]
-	<//B_id_selectionne>
+	<//B_declinaison_selectionne>
 <//B_test_multiple>

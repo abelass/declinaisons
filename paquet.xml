@@ -9,7 +9,7 @@
 	schema="1.0.0" 
 >
 	<!--
-		Paquet généré le 2012-11-09 10:10:08
+		Paquet généré le 2012-11-09 10:22:19
 		(Vous pouvez bien entendu supprimer ces commentaires) 
 	-->
 
@@ -46,6 +46,6 @@
 	<pipeline nom="declarer_tables_objets_sql" inclure="base/shop_declinaisons.php" /> 
 	<pipeline nom="declarer_tables_interfaces" inclure="base/shop_declinaisons.php" /> 
 
-	<menu nom="declinaison" titre="id:titre_declinaison" parent="menu_edition" icone="images/id-16.png" action="declinaison" /> 
-	<menu nom="id_creer" titre="id:icone_creer_id" parent="outils_rapides" icone="images/id-new-16.png" action="id_edit" parametres="new=oui" /> 
+	<menu nom="declinaison" titre="declinaison:titre_declinaison" parent="menu_edition" icone="images/declinaison-16.png" action="declinaison" /> 
+	<menu nom="declinaison_creer" titre="declinaison:icone_creer_declinaison" parent="outils_rapides" icone="images/declinaison-new-16.png" action="declinaison_edit" parametres="new=oui" /> 
 </paquet>

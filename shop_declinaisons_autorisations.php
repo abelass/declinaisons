@@ -38,27 +38,27 @@ function autoriser_declinaison_menu_dist($faire, $type, $id, $qui, $opts){
 } 
 
 // bouton d'outils rapides
-function autoriser_idcreer_menu_dist($faire, $type, $id, $qui, $opts){
-	return autoriser('creer', 'id', '', $qui, $opts);
+function autoriser_declinaisoncreer_menu_dist($faire, $type, $id, $qui, $opts){
+	return autoriser('creer', 'declinaison', '', $qui, $opts);
 } 
 
 // creer
-function autoriser_id_creer_dist($faire, $type, $id, $qui, $opt) {
+function autoriser_declinaison_creer_dist($faire, $type, $id, $qui, $opt) {
 	return in_array($qui['statut'], array('0minirezo', '1comite')); 
 }
 
 // voir les fiches completes
-function autoriser_id_voir_dist($faire, $type, $id, $qui, $opt) {
+function autoriser_declinaison_voir_dist($faire, $type, $id, $qui, $opt) {
 	return true;
 }
 
 // modifier
-function autoriser_id_modifier_dist($faire, $type, $id, $qui, $opt) {
+function autoriser_declinaison_modifier_dist($faire, $type, $id, $qui, $opt) {
 	return in_array($qui['statut'], array('0minirezo', '1comite'));
 }
 
 // supprimer
-function autoriser_id_supprimer_dist($faire, $type, $id, $qui, $opt) {
+function autoriser_declinaison_supprimer_dist($faire, $type, $id, $qui, $opt) {
 	return $qui['statut'] == '0minirezo' AND !$qui['restreint'];
 }
 
