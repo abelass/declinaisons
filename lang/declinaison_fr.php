@@ -10,6 +10,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 
     // C
     'cfg_titre_parametrages' => 'Paramétrages',
+    'choisir_declinaison' => 'Choisissez une déclinaison de ce produit',    
 
     // I
     'icone_creer_declinaison' => 'Créer une déclinaison',
@@ -41,7 +42,6 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
     'titre_langue_declinaison' => 'Langue de cette déclinaison',
     'titre_logo_declinaison' => 'Logo de cette déclinaison',
     'titre_page_configurer_shop_declinaisons' => 'Configuration Déclinaisons',
-
 
 );
 

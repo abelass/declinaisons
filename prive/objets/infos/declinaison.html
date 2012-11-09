@@ -1,6 +1,6 @@
 <BOUCLE_declinaison(DECLINAISONS){id_declinaison=#ENV{id}}{statut?}>
 <div class='infos'>
-[(#SET{texte_objet,<:shop_declinaisons:titre_declinaison:>})]
+[(#SET{texte_objet,<:declinaison:titre_declinaison:>})]
 <div class='numero'><:titre_cadre_numero_objet{objet=#GET{texte_objet}}:><p>#ID_DECLINAISON</p></div>
 
 [(#FORMULAIRE_INSTITUER_OBJET{declinaisons,#ID_DECLINAISON})]
