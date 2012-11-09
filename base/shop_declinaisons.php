@@ -13,7 +13,7 @@ if (!defined('_ECRIRE_INC_VERSION')) return;
  */
 function shop_declinaisons_declarer_tables_interfaces($interfaces) {
 
-	$interfaces['table_des_tables']['declinaison'] = 'declinaison';
+	$interfaces['table_des_tables']['declinaisons'] = 'declinaisons';
 
 	return $interfaces;
 }
@@ -29,8 +29,9 @@ function shop_declinaisons_declarer_tables_objets_sql($tables) {
 		'principale' => "oui",
 		'field'=> array(
 			"id_declinaison"     => "bigint(21) NOT NULL",
-			"titre"              => "varchar(250)  DEFAULT '' NOT NULL",
+			"titre"              => "varchar(255)  DEFAULT '' NOT NULL",
 			"descriptif"         => "text NOT NULL",
+			"id_parent"          => "bigint(21) NOT NULL",
 			"statut"             => "varchar(20)  DEFAULT '0' NOT NULL", 
 			"maj"                => "TIMESTAMP"
 		),
@@ -40,8 +41,8 @@ function shop_declinaisons_declarer_tables_objets_sql($tables) {
 		),
 		'titre' => "titre AS titre, '' AS lang",
 		 #'date' => "",
-		'champs_editables'  => array('titre', 'descriptif'),
-		'champs_versionnes' => array('titre', 'descriptif'),
+		'champs_editables'  => array('titre', 'descriptif', 'id_parent'),
+		'champs_versionnes' => array('titre', 'descriptif', 'id_parent'),
 		'rechercher_champs' => array(),
 		'tables_jointures'  => array(),
 		'statut_textes_instituer' => array(

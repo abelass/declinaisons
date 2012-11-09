@@ -29,11 +29,11 @@ function autoriser_configurer_shop_declinaisons_dist($faire, $type, $id, $qui, $
 */
 
 // -----------------
-// Objet declinaison
+// Objet declinaisons
 
 
 // bouton de menu
-function autoriser_declinaison_menu_dist($faire, $type, $id, $qui, $opts){
+function autoriser_declinaisons_menu_dist($faire, $type, $id, $qui, $opts){
 	return true;
 } 
 

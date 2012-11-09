@@ -1,5 +1,5 @@
 [(#AUTORISER{voir,declinaison,#ID_DECLINAISON}|sinon_interdire_acces)]
-<BOUCLE_declinaison(DECLINAISON){id_declinaison}{statut==.*}{si #ENV{exec}|=={declinaison}}>
+<BOUCLE_declinaison(DECLINAISONS){id_declinaison}{statut==.*}{si #ENV{exec}|=={declinaison}}>
 [(#BOITE_OUVRIR{[
 	[(#AUTORISER{modifier,declinaison,#ID_DECLINAISON})
 		[(#ID_DECLINAISON|afficher_qui_edite{declinaison}|non)

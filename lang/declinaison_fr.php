@@ -14,23 +14,25 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'icone_modifier_declinaison' => 'Modifier cette déclinaison',
 	'info_1_declinaison' => 'Une déclinaison',
 	'info_aucun_declinaison' => 'Aucune déclinaison',
-	'info_declinaison_auteur' => 'Les déclinaisons de cet auteur',
-	'info_nb_declinaison' => '@nb@ déclinaisons',
+	'info_declinaisons_auteur' => 'Les déclinaisons de cet auteur',
+	'info_nb_declinaisons' => '@nb@ déclinaisons',
 
 	// L
 	'label_descriptif' => 'descriptif',
+	'label_id_parent' => 'declinaison_parente',
 	'label_titre' => 'titre',
 
 	// R
 	'retirer_lien_declinaison' => 'Retirer cette déclinaison',
-	'retirer_tous_liens_declinaison' => 'Retirer toutes les déclinaisons',
+	'retirer_tous_liens_declinaisons' => 'Retirer toutes les déclinaisons',
 
 	// T
 	'texte_ajouter_declinaison' => 'Ajouter une déclinaison',
 	'texte_changer_statut_declinaison' => 'Cette déclinaison est :',
 	'texte_creer_associer_declinaison' => 'Créer et associer une déclinaison',
 	'titre_declinaison' => 'Déclinaison',
-	'titre_declinaison_rubrique' => 'Déclinaisons de la rubrique',
+	'titre_declinaisons' => 'Déclinaisons',
+	'titre_declinaisons_rubrique' => 'Déclinaisons de la rubrique',
 	'titre_langue_declinaison' => 'Langue de cette déclinaison',
 	'titre_logo_declinaison' => 'Logo de cette déclinaison',
 );
