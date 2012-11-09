@@ -6,7 +6,7 @@
 	compatibilite="[3.0.5;3.0.*]"
 	logo="prive/themes/spip/images/shop_declinaisons-64.png"
 	documentation=""
-	schema="1.0.0" 
+	schema="1.0.1" 
 >
 	<!--
 		Paquet généré le 2012-11-09 11:16:18
@@ -45,6 +45,7 @@
 
 	<pipeline nom="declarer_tables_objets_sql" inclure="base/shop_declinaisons.php" /> 
 	<pipeline nom="declarer_tables_interfaces" inclure="base/shop_declinaisons.php" /> 
+	<pipeline nom="declarer_tables_principales" inclure="base/shop_declinaisons.php" /> 
 
 	<menu nom="declinaisons" titre="declinaison:titre_declinaisons" parent="menu_edition" icone="images/declinaison-16.png" action="declinaisons" /> 
 	<menu nom="declinaison_creer" titre="declinaison:icone_creer_declinaison" parent="outils_rapides" icone="images/declinaison-new-16.png" action="declinaison_edit" parametres="new=oui" /> 
