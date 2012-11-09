@@ -1,0 +1,8 @@
+#FORMULAIRE_RECHERCHE_ECRIRE{#SELF,ajax}
+<div class="nettoyeur"></div>
+
+<INCLURE{fond=prive/objets/liste/declinaison, par=titre, env, ajax, sinon=<:id:info_aucun_id:>}>
+
+[(#AUTORISER{creer,id})
+	[(#URL_ECRIRE{id_edit,new=oui}|icone_verticale{<:id:icone_creer_id:>,id,new,right})]
+]
