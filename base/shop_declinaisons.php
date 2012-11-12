@@ -53,7 +53,7 @@ function shop_declinaisons_declarer_tables_objets_sql($tables) {
 		 #'date' => "",
 		'champs_editables'  => array('titre', 'descriptif', 'id_parent'),
 		'champs_versionnes' => array('titre', 'descriptif', 'id_parent'),
-		'rechercher_champs' => array(),
+		'rechercher_champs' => array('titre' => 8, 'descriptif' => 2),
 		'tables_jointures'  => array(),
 		'statut_textes_instituer' => array(
 			'prepa'    => 'texte_statut_en_cours_redaction',
