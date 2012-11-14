@@ -10,7 +10,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 
     // C
     'cfg_titre_parametrages' => 'Paramétrages',
-    'choisir_declinaison' => 'Choisissez une déclinaison de ce produit',    
+    'choisir_declinaison' => 'Choisissez une déclinaison pour ce prix',    
 
     // I
     'icone_creer_declinaison' => 'Créer une déclinaison',
