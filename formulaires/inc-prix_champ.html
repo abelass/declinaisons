@@ -7,8 +7,8 @@
                 <option value="#ID_DECLINAISON"[(#ID_DECLINAISON|=={#ENV{id_declinaison}}|oui) selected="selected"]>#TITRE</option>
             </BOUCLE_declinaisons>
         </select>
-     </div>   
         [(#SET{redirect,#SELF|parametre_url{retour_action,oui}})]
-      [<p>(#AUTORISER{creer,declinaison})[(#URL_ECRIRE{declinaison_edit,new=oui}|parametre_url{redirect,#GET{redirect}#edition_prix}|icone_verticale{<:declinaison:icone_creer_declinaison:>,declinaison,new,right})]</p>
-    ]
+      [(#AUTORISER{creer,declinaison})[(#URL_ECRIRE{declinaison_edit,new=oui}|parametre_url{redirect,#GET{redirect}#edition_prix}|icone_verticale{<:declinaison:icone_creer_declinaison:>,declinaison,new,right})]
+    ] 
 </li>
+
