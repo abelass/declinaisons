@@ -1,0 +1,31 @@
+#ENV
+
+<div class='formulaire_spip formulaire_editer formulaire_#FORM formulaire'>
+    [<p class="reponse_formulaire reponse_formulaire_ok">(#ENV**{message_ok})</p>]
+    [<p class="reponse_formulaire reponse_formulaire_erreur">(#ENV*{message_erreur})</p>]
+
+
+    <form method='post' action='#ENV{action}'><div>
+    		#ACTION_FORMULAIRE{#ENV{action}}
+    		<B_selection>    
+            <ul><li>
+					<select name="id_prix">
+						<option value=""><:shop:produits:></option>
+						<BOUCLE_selection(POUR){tableau #ENV{declinaisons}}>
+						<option value="#VALEUR{id_prix}">#VALEUR{titre} #VALEUR{prix} #VALEUR{taxe}</option>
+						</BOUCLE_selection>
+					</select>
+				</li>
+			<ul></ul>
+				</B_selection>					
+
+			</span>	
+      </div>
+     <div>
+
+
+		<p><input type="submit"  class="submit" value="<:texte_ajouter:>" /></p></div>
+	</form>
+<br class="nettoyeur"/>
+</div>
+
