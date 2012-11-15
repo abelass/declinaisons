@@ -21,7 +21,7 @@ function shop_declinaisons_declarer_tables_interfaces($interfaces) {
 
 function shop_declinaisons_declarer_tables_principales($tables_principales){
 
-        $tables_principales['spip_prix']['field']['id_declinaison']= "bigint(21) NOT NULL";
+        $tables_principales['spip_prix_objets']['field']['id_declinaison']= "bigint(21) NOT NULL";
 
         return $tables_principales;
         
