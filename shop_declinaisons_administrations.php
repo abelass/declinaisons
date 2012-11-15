@@ -38,7 +38,7 @@ function shop_declinaisons_upgrade($nom_meta_base_version, $version_cible) {
 	# ...
 
 	$maj['create'] = array(array('maj_tables', array('spip_declinaisons')));
-    $maj['1.0.1'] = array(array('maj_tables', array('spip_prix')));
+
     
 	include_spip('base/upgrade');
 	maj_plugin($nom_meta_base_version, $version_cible, $maj);
