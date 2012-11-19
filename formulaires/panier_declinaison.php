@@ -41,7 +41,7 @@ function formulaires_panier_declinaison_charger_dist($id_objet_produit,$objet_pr
 function formulaires_panier_declinaison_traiter_dist($id_objet,$objet='article'){
         
   refuser_traiter_formulaire_ajax();
-  $retour=generer_action_auteur('remplir_panier','prix-'._request('id_prix_objet'),_request('retour'),true);
+  $retour=generer_action_auteur('remplir_panier','prix_objet-'._request('id_prix_objet'),_request('retour'),true);
    header("location: $retour");
 
     return $valeurs;
