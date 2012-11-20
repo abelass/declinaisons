@@ -1,7 +1,7 @@
 <li>
 <label><:declinaison:choisir_declinaison:></label>
 
-            <select name="id_declinaison" id="id_declinaison"  class="id_declinaison" size="1">
+            <select name="id_objet_titre" id="id_objet_titre"  class="id_objet_titre" size="1">
                 <option value="0"><:declinaison:info_aucun_declinaison:></option>
             <BOUCLE_declinaisons(DECLINAISONS){par num titre, titre}{id_declinaison !IN #ENV{declinaisons_choisis}}>
                 <option value="#ID_DECLINAISON"[(#ID_DECLINAISON|=={#ENV{id_declinaison}}|oui) selected="selected"]>#TITRE</option>

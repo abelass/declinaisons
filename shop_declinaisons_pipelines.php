@@ -29,35 +29,13 @@ function shop_declinaisons_recuperer_fond($flux){
     return $flux;
 }
 
-function shop_declinaisons_post_insertion($flux){
-    // Après insertion d'une commande "encours" et s'il y a un panier en cours
-    if (
-        $flux['args']['table'] == 'spip_commandes'
-        and ($id_commande = intval($flux['args']['id_objet'])) > 0
-        and $flux['data']['statut'] == 'encours'
-    ){
-        // On récupère le contenu du panier
-        $details = sql_allfetsel(
-            '*',
-            'spip_commandes_details',
-            'id_commande = '.$id_commande
-        );
-        
-        // On rajoute le détail
-        if ($details){
-            foreach($details as $emplette){
-                $id_declinaison=sql_getfetsel('id_declinaison','spip_prix_objets','id_prix='.$emplette['id_objet']);
-                sql_updateq(
-                    'spip_commandes_details',
-                    array(
-                        'descriptif' => recuperer_fond('formulaires/inc-panier-description-emplette',array('id_objet'=>$emplette['id_objet'])),
-                    ),
-                    'id_commandes_detail='.$emplette['id_commandes_detail']
-                );
-            }
-        }
+function shop_declinaisons_formulaire_charger($flux){
+ $form=$flux['args']['form'];
+ 
+ // cré un contact si pas encore existant
+ if($form == 'prix'){
+    $flux['data']['_hidden'].='<input type="hidden" name="objet_titre" value="declinaison">';      
     }
-    
-    return $flux;
+     return($flux);
 }
 ?>

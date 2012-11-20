@@ -25,9 +25,9 @@
                 <td>[(#VALEUR|table_valeur{code_devise}|traduire_devise)]</td>
                 <td>#GET{taxes}</td>
                 <td>
-                    <BOUCLE_declinaisons_sel(DECLINAISONS){id_declinaison=#VALEUR{id_declinaison}}>
-                        #TITRE
-                       </BOUCLE_declinaisons_sel>  
+                   
+                        #VALEUR{titre}
+                  
             </td>
             <td>
                 <a class="ajax" href="[(#URL_ACTION_AUTEUR{eliminer_prix,[(#VALEUR|table_valeur{id_prix_objet})],[(#SELF|parametre_url{retour_action,oui})]})]#edition_prix" title="<:shop:supprimer:>"> <img src="#CHEMIN_IMAGE{supprimer-12.png}" /></a>

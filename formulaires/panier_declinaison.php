@@ -10,7 +10,6 @@ function formulaires_panier_declinaison_charger_dist($id_objet_produit,$objet_pr
    $declinaisons=array();
    
    while($data=sql_fetch($sql)){
-       unset($data[titre]);
        if($data['prix_ht']!=0.00){
         $data['prix'] = $data['prix_ht'];          
         $data['taxe'] = _T('shop:prix_ht');
@@ -19,8 +18,6 @@ function formulaires_panier_declinaison_charger_dist($id_objet_produit,$objet_pr
          $data['prix'] = $data['prix']; 
          $data['taxe'] = _T('shop:prix');      
        }
-           
-       if($data['id_declinaison'])$data[titre]=sql_getfetsel('titre','spip_declinaisons','id_declinaison='.$data['id_declinaison']);
        $declinaisons[]=$data;
        
         }
