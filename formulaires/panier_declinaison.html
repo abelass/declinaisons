@@ -1,10 +1,10 @@
 <B_selection>
-<div class='formulaire_spip formulaire_editer formulaire_#FORM formulaire'>
+<div class='formulaire_spip formulaire_editer formulaire_#FORM formulaire  ajax'>
     [<p class="reponse_formulaire reponse_formulaire_ok">(#ENV**{message_ok})</p>]
     [<p class="reponse_formulaire reponse_formulaire_erreur">(#ENV*{message_erreur})</p>]
 
 
-    <form method='post' action='#ENV{action}'><div>
+    <form method='post' action='#ENV{action}' id="editer_#FORM"><div>
     		#ACTION_FORMULAIRE{#ENV{action}}
     		<input type="hidden" name="retour" value="#SELF"/>
             <ul>
@@ -30,5 +30,14 @@
 		<p><input type="submit"  class="submit" value="<:paniers:action_ajouter:>" /></p></div>
 	</form>
 <br class="nettoyeur"/>
+
+ <script type="text/javascript">
+    jQuery(function(){
+    if (jQuery('#editer_panier_declinaison'))
+        ajaxReload('mon_panier');
+});
+
+</script>   
+
 </div>
 </B_selection>		
