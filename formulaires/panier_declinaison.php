@@ -28,19 +28,16 @@ function formulaires_panier_declinaison_charger_dist($id_objet_produit,$objet_pr
     'declinaisons'=>$declinaisons,
     'id_prix_objet'=>'',
     'retour'=>'');
-    
-
-   
 
 	return $valeurs;			
 }
 
 function formulaires_panier_declinaison_traiter_dist($id_objet,$objet='article'){
         
-  refuser_traiter_formulaire_ajax();
-  $retour=generer_action_auteur('remplir_panier','prix_objet-'._request('id_prix_objet'),_request('retour'),true);
-   header("location: $retour");
-
+    $remplir_panier=charger_fonction('remplir_panier','action/');
+  
+    $remplir_panier('prix_objet-'._request('id_prix_objet'));
+  
     return $valeurs;
 }
 
