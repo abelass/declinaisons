@@ -9,6 +9,14 @@ function formulaires_panier_declinaison_charger_dist($id_objet_produit,$objet_pr
    
    $declinaisons=array();
    
+    $id_panier = session_get('id_panier');
+    // S'il n'y a pas de panier, on le crée
+    if (!$id_panier){
+        include_spip('inc/paniers');
+        $id_panier = paniers_creer_panier();
+    }
+    
+   
    while($data=sql_fetch($sql)){
        if($data['prix_ht']!=0.00){
         $data['prix'] = $data['prix_ht'];          
