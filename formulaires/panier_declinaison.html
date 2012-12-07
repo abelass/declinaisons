@@ -14,10 +14,12 @@
 					   <option value=""><:shop:produits:></option>
 					   ]
 						<BOUCLE_selection(POUR){tableau #ENV{declinaisons}}>
-						[(#TOTAL_BOUCLE|>{1}|?{#VALEUR{titre}
-						<option value="[(#VALEUR{id_prix_objet})]">[(#VALEUR{titre})]&nbsp; [(#VALEUR{prix})] &nbsp; [(#VALEUR{code_devise}|traduire_devise)] &nbsp;[((#VALEUR{taxe}))]</option>
+						[(#TOTAL_BOUCLE|>{1}|?{
+						<option value="[(#VALEUR{id_prix_objet})]">
+						    [(#VALEUR{titre})]&nbsp; [(#VALEUR{prix})] &nbsp; [(#VALEUR{code_devise}|traduire_devise)] &nbsp;[((#VALEUR{taxe}))]
+						</option>
 						,
-						<input type="hidden" name="id_prix_objet" value="[(#VALEUR{id_prix_objet})]">
+						<input type="hidden" name="id_prix_objet" value="[(#VALEUR{id_prix_objet})]"/>
 						[(#VALEUR{titre})]&nbsp; [(#VALEUR{prix})] &nbsp; [(#VALEUR{code_devise}|traduire_devise)] &nbsp;[((#VALEUR{taxe}))]
 						})]
 						</BOUCLE_selection>
