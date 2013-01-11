@@ -26,6 +26,10 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
     'label_id_parent' => 'declinaison_parente',
     'label_titre' => 'titre',
 
+
+    // R
+    'produits' => 'Produits',
+
     // R
     'retirer_lien_declinaison' => 'Retirer cette déclinaison',
     'retirer_tous_liens_declinaisons' => 'Retirer toutes les déclinaisons',
