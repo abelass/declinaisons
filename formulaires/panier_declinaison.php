@@ -15,7 +15,6 @@ function formulaires_panier_declinaison_charger_dist($id_objet_produit,$objet_pr
         include_spip('inc/paniers');
         $id_panier = paniers_creer_panier();
     }
-    
    
    while($data=sql_fetch($sql)){
        if($data['prix_ht']!=0.00){
@@ -31,6 +30,8 @@ function formulaires_panier_declinaison_charger_dist($id_objet_produit,$objet_pr
         }
 
    $valeurs=array(
+    'objet_produit'=>$objet_produit,
+    'id_objet_produit'=>$id_objet_produit,    
     'objet'=>'prix',
     'id_objet'=>'',
     'declinaisons'=>$declinaisons,
@@ -45,6 +46,9 @@ function formulaires_panier_declinaison_traiter_dist($id_objet,$objet='article')
     $remplir_panier=charger_fonction('remplir_panier','action/');
   
     $remplir_panier('prix_objet-'._request('id_prix_objet'));
+    
+    include_spip('inc/invalideur');
+    suivre_invalideur("id='id_panier/$id_panier'");
   
     return $valeurs;
 }
