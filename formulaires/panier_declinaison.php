@@ -5,7 +5,8 @@ if (!defined("_ECRIRE_INC_VERSION")) return;
 
 function formulaires_panier_declinaison_charger_dist($id_objet_produit,$objet_produit='article'){
     
-   $sql=sql_select('*','spip_prix_objets','id_objet='.$id_objet_produit.' AND objet='.sql_quote($objet_produit));
+   if(is_array($id_objet_produit))$id_objet_produit=implode(',',$id_objet_produit);
+   if($id_objet_produit)$sql=sql_select('*','spip_prix_objets','id_objet IN ('.$id_objet_produit.') AND objet='.sql_quote($objet_produit));
    
    $declinaisons=array();
    
