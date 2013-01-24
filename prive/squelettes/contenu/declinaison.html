@@ -3,7 +3,7 @@
 [(#BOITE_OUVRIR{[
 	[(#AUTORISER{modifier,declinaison,#ID_DECLINAISON})
 		[(#ID_DECLINAISON|afficher_qui_edite{declinaison}|non)
-			[(#URL_ECRIRE{declinaison_edit,id_declinaison=#ID_DECLINAISON}|icone_verticale{<:declinaison:icone_modifier_declinaison:>,declinaison,edit,right ajax preload})]
+			[(#URL_ECRIRE{declinaison_edit,id_declinaison=#ID_DECLINAISON}|icone_verticale{<:declinaisons:icone_modifier_declinaison:>,declinaison,edit,right ajax preload})]
 		]
 		[(#ID_DECLINAISON|afficher_qui_edite{declinaison}|oui)
 			[(#URL_ECRIRE{declinaison_edit,id_declinaison=#ID_DECLINAISON}|icone_verticale{#ID_DECLINAISON|afficher_qui_edite{declinaison},warning-24,'',right edition_deja ajax preload})]
@@ -28,7 +28,7 @@
 
 [(#AUTORISER{modifier,declinaison,#ID_DECLINAISON})
 	[(#ID_DECLINAISON|afficher_qui_edite{declinaison}|non)
-		[(#URL_ECRIRE{declinaison_edit,id_declinaison=#ID_DECLINAISON}|icone_verticale{<:declinaison:icone_modifier_declinaison:>,declinaison,edit,right ajax preload})]
+		[(#URL_ECRIRE{declinaison_edit,id_declinaison=#ID_DECLINAISON}|icone_verticale{<:declinaisons:icone_modifier_declinaison:>,declinaison,edit,right ajax preload})]
 	]
 	[(#ID_DECLINAISON|afficher_qui_edite{declinaison}|oui)
 		[(#URL_ECRIRE{declinaison_edit,id_declinaison=#ID_DECLINAISON}|icone_verticale{#ID_DECLINAISON|afficher_qui_edite{declinaison},warning-24,'',right edition_deja ajax preload})]
