@@ -24,7 +24,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
     // L
     'label_descriptif' => 'descriptif',
     'label_id_parent' => 'declinaison_parente',
-    'label_titre' => 'titre',
+    'label_titre' => 'Titre',
 
 
     // R
