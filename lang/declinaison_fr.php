@@ -22,7 +22,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
     'info_nb_declinaisons' => '@nb@ déclinaisons',
     'info_nb_prix' => '@nb@ prix attachés',
     // L
-    'label_descriptif' => 'descriptif',
+    'label_descriptif' => 'Descriptif',
     'label_id_parent' => 'Déclinaison parente',
     'label_titre' => 'Titre',
 
