@@ -1,6 +1,5 @@
 <B_selection>
 <div class='formulaire_spip formulaire_editer formulaire_#FORM formulaire'>
-    [<p class="reponse_formulaire reponse_formulaire_ok">(#ENV**{message_ok})</p>]
     [<p class="reponse_formulaire reponse_formulaire_erreur">(#ENV*{message_erreur})</p>]
 
 
@@ -11,7 +10,7 @@
                 <li>
 					[(#TOTAL_BOUCLE|>{1}|oui)
 					   <select name="id_prix_objet">#SET{plusieurs,oui}
-					   <option value=""><:shop:produits:></option>
+					   <option value=""><:shop:choix_produit:></option>
 					   ]
 						<BOUCLE_selection(POUR){tableau #ENV{declinaisons}}>
 						[(#TOTAL_BOUCLE|>{1}|?{
@@ -33,12 +32,14 @@
 	</form>
 <br class="nettoyeur"/>
 
- <script type="text/javascript">
- 
-$(".submit").click(function() {
- ajaxReload('mon_panier');
-});
-</script>   
 
 </div>
 </B_selection>		
+[(#ENV{message_ok}|oui)
+ <script type="text/javascript">
+ 
+ $(function(){
+ ajaxReload('mon_panier');
+});
+</script>   
+]

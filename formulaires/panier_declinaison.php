@@ -24,7 +24,7 @@ function formulaires_panier_declinaison_charger_dist($id_objet_produit,$objet_pr
        }
        else{
          $data['prix'] = $data['prix']; 
-         $data['taxe'] = _T('shop:prix');      
+         $data['taxe'] = _T('shopprix:prix_ttc');      
        }
        $declinaisons[]=$data;
        
@@ -50,6 +50,8 @@ function formulaires_panier_declinaison_traiter_dist($id_objet,$objet='article')
     
     include_spip('inc/invalideur');
     suivre_invalideur("id='id_panier/$id_panier'");
+    
+    $valeurs['message_ok']=true;
   
     return $valeurs;
 }
