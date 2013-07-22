@@ -6,7 +6,7 @@
 	compatibilite="[3.0.5;3.0.*]"
 	logo="prive/themes/spip/images/shop_declinaisons-64.png"
 	documentation=""
-	schema="1.0.1" 
+	schema="1.0.2" 
 >
 
 	<nom>Déclinaisons Produit</nom>
