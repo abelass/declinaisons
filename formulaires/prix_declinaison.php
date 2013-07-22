@@ -58,8 +58,9 @@ function formulaires_prix_declinaison_traiter_dist($id_objet,$objet='article'){
 		'objet'=>$objet,	
 		'prix_ht' => _request('prix'),
 		'code_devise' => _request('code_devise'),
-        'id_declinaison' => _request('id_declinaison'),		
+        'id_declinaison' => _request('id_objet_titre'),		
 		);
+
 	$id_prix_objet=sql_insertq('spip_prix_objets', $valeurs);
     return $valeurs;
 }
