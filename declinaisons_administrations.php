@@ -16,7 +16,7 @@ if (!defined('_ECRIRE_INC_VERSION')) return;
  * - installer des valeurs de configuration,
  * - mettre à jour la structure SQL 
 **/
-function shop_declinaisons_upgrade($nom_meta_base_version, $version_cible) {
+function declinaisons_upgrade($nom_meta_base_version, $version_cible) {
 	$maj = array();
 
 
@@ -34,7 +34,7 @@ function shop_declinaisons_upgrade($nom_meta_base_version, $version_cible) {
  * - nettoyer toutes les données ajoutées par le plugin et son utilisation
  * - supprimer les tables et les champs créés par le plugin. 
 **/
-function shop_declinaisons_vider_tables($nom_meta_base_version) {
+function declinaisons_vider_tables($nom_meta_base_version) {
 	# quelques exemples
 	# (que vous pouvez supprimer !)
 	# sql_drop_table("spip_xx");

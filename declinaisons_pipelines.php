@@ -8,7 +8,7 @@
 if (!defined('_ECRIRE_INC_VERSION')) return;
 
 
-function shop_declinaisons_recuperer_fond($flux){
+function declinaisons_recuperer_fond($flux){
     $fond=$flux['args']['fond'];
     $contexte=$flux['args']['contexte'];
 
@@ -29,7 +29,7 @@ function shop_declinaisons_recuperer_fond($flux){
     return $flux;
 }
 
-function shop_declinaisons_formulaire_charger($flux){
+function declinaisons_formulaire_charger($flux){
  $form=$flux['args']['form'];
  
  // cré un contact si pas encore existant

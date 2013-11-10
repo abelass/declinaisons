@@ -13,13 +13,13 @@ if (!defined('_ECRIRE_INC_VERSION')) return;
  */
 
 // declaration vide pour ce pipeline.
-function shop_declinaisons_autoriser(){}
+function declinaisons_autoriser(){}
 
 
 /* Exemple
-function autoriser_configurer_shop_declinaisons_dist($faire, $type, $id, $qui, $opt) {
+function autoriser_configurer_declinaisons_dist($faire, $type, $id, $qui, $opt) {
 	// type est un objet (la plupart du temps) ou une chose.
-	// autoriser('configurer', '_shop_declinaisons') => $type = 'shop_declinaisons'
+	// autoriser('configurer', '_declinaisons') => $type = 'declinaisons'
 	// au choix
 	return autoriser('webmestre', $type, $id, $qui, $opt); // seulement les webmestres
 	return autoriser('configurer', '', $id, $qui, $opt); // seulement les administrateurs complets

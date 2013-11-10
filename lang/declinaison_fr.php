@@ -35,7 +35,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
     'retirer_tous_liens_declinaisons' => 'Retirer toutes les déclinaisons',
     
     // S
-    'shop_declinaisons_titre' => 'Déclinaisons Produit',
+    'declinaisons_titre' => 'Déclinaisons Produit',
 
     // T
     'texte_ajouter_declinaison' => 'Ajouter une déclinaison',
@@ -46,7 +46,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
     'titre_declinaisons_rubrique' => 'Déclinaisons de la rubrique',
     'titre_langue_declinaison' => 'Langue de cette déclinaison',
     'titre_logo_declinaison' => 'Logo de cette déclinaison',
-    'titre_page_configurer_shop_declinaisons' => 'Configuration Déclinaisons',
+    'titre_page_configurer_declinaisons' => 'Configuration Déclinaisons',
 
 );
 

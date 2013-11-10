@@ -11,7 +11,7 @@ if (!defined('_ECRIRE_INC_VERSION')) return;
 /**
  * Déclaration des alias de tables et filtres automatiques de champs
  */
-function shop_declinaisons_declarer_tables_interfaces($interfaces) {
+function declinaisons_declarer_tables_interfaces($interfaces) {
 
 	$interfaces['table_des_tables']['declinaisons'] = 'declinaisons';
 
@@ -19,7 +19,7 @@ function shop_declinaisons_declarer_tables_interfaces($interfaces) {
 }
 
 
-function shop_declinaisons_declarer_tables_principales($tables_principales){
+function declinaisons_declarer_tables_principales($tables_principales){
 
         $tables_principales['spip_prix_objets']['field']['id_declinaison']= "bigint(21) NOT NULL";
 
@@ -32,7 +32,7 @@ function shop_declinaisons_declarer_tables_principales($tables_principales){
 /**
  * Déclaration des objets éditoriaux
  */
-function shop_declinaisons_declarer_tables_objets_sql($tables) {
+function declinaisons_declarer_tables_objets_sql($tables) {
 
 	$tables['spip_declinaisons'] = array(
 		'type' => 'declinaison',

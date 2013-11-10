@@ -24,7 +24,7 @@ function formulaires_panier_declinaison_charger_dist($id_objet_produit,$objet_pr
        }
        else{
          $data['prix'] = $data['prix']; 
-         $data['taxe'] = _T('shopprix:prix_ttc');      
+         $data['taxe'] = _T('prix_objets:prix_ttc');      
        }
        $declinaisons[]=$data;
        
