@@ -19,7 +19,6 @@ if (!defined('_ECRIRE_INC_VERSION')) return;
 function declinaisons_upgrade($nom_meta_base_version, $version_cible) {
 	$maj = array();
 
-
 	$maj['create'] = array(array('maj_tables', array('spip_declinaisons','spip_prix_objets')));
 	$maj['1.0.2'] = array(array('maj_tables', array('spip_prix_objets')));
     
@@ -35,10 +34,6 @@ function declinaisons_upgrade($nom_meta_base_version, $version_cible) {
  * - supprimer les tables et les champs créés par le plugin. 
 **/
 function declinaisons_vider_tables($nom_meta_base_version) {
-	# quelques exemples
-	# (que vous pouvez supprimer !)
-	# sql_drop_table("spip_xx");
-	# sql_drop_table("spip_xx_liens");
 
 	sql_drop_table("spip_declinaisons");
 
