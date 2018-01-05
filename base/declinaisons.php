@@ -37,15 +37,15 @@ function declinaisons_declarer_tables_objets_sql($tables) {
 			"titre"              => "varchar(255)  DEFAULT '' NOT NULL",
 			"descriptif"         => "text NOT NULL",
 			"id_parent"          => "bigint(21) NOT NULL",
-			"statut"             => "varchar(20)  DEFAULT '0' NOT NULL", 
+			"statut"             => "varchar(20)  DEFAULT '0' NOT NULL",
 			"maj"                => "TIMESTAMP"
 		),
 		'key' => array(
 			"PRIMARY KEY"        => "id_declinaison",
-			"KEY statut"         => "statut", 
+			"KEY statut"         => "statut",
 		),
 		'titre' => "titre AS titre, '' AS lang",
-		 #'date' => "",
+		#'date' => "",
 		'champs_editables'  => array('titre', 'descriptif', 'id_parent'),
 		'champs_versionnes' => array('titre', 'descriptif', 'id_parent'),
 		'rechercher_champs' => array('titre' => 8, 'descriptif' => 2),
@@ -62,12 +62,12 @@ function declinaisons_declarer_tables_objets_sql($tables) {
 				'champ'     => 'statut',
 				'publie'    => 'publie',
 				'previsu'   => 'publie,prop,prepa',
-				'post_date' => 'date', 
+				'post_date' => 'date',
 				'exception' => array('statut','tout')
 			)
 		),
-		'texte_changer_statut' => 'declinaison:texte_changer_statut_declinaison', 
-		
+		'texte_changer_statut' => 'declinaison:texte_changer_statut_declinaison',
+
 
 	);
 
