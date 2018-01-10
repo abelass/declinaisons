@@ -16,7 +16,10 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'choix_produit' => 'Choisissez un produit',
 
 	// D
-	'declinaisons_titre' => 'Déclinaisons Produit',
+	'declinaisons_titre' => 'Déclinaisons Prix',
+
+	// E
+	'explication_formulaire_titre_complet' => 'Le titre complet contient le titre de l\'objet suivit du titre de la déclinaions. Si désactive, seul le titre de la déclinaison es montré',
 
 	// I
 	'icone_creer_declinaison' => 'Créer une déclinaison',
@@ -30,11 +33,10 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 
 	// L
 	'label_descriptif' => 'Descriptif',
+	'label_formulaire_titre_complet' => 'Afficher le titre complet du prix',
 	'label_id_parent' => 'Déclinaison parente',
 	'label_titre' => 'Titre',
-
-	// P
-	'produits' => 'Produits',
+	'legende_formulaire_panier' => 'Formulaire panier',
 
 	// R
 	'retirer_lien_declinaison' => 'Retirer cette déclinaison',
