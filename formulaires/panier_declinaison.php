@@ -11,6 +11,9 @@ if (!defined("_ECRIRE_INC_VERSION"))
 	if ($titre == 'court') {
 		$formulaire_titre_complet = '';
 	}
+	elseif ($titre == 'complet') {
+		$formulaire_titre_complet = 'on';
+	}
 
 	if (is_array($id_objet_produit))
 		$id_objet_produit = implode(',', $id_objet_produit);
