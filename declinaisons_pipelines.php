@@ -1,11 +1,27 @@
 <?php
 /**
- * Plugin Déclinaisons Prix
- * (c) 2012 Rainer Müller
- * Licence GNU/GPL
+ * Utilisations de pipelines par Déclinaisons Prix
+ *
+ * @plugin     Déclinaisons Prix
+ * @copyright  2012 - 2018
+ * @author     Rainer Müller
+ * @licence    GNU/GPL
+ * @package    SPIP\Promotions_commandes\Pipelines
  */
+
 if (!defined('_ECRIRE_INC_VERSION'))
 	return;
+
+
+/**
+ * Modifie le résultat de compilation d’un squelette
+ *
+ * @pipeline recuperer_fond
+ *
+ * @param array $flux
+ *        	Données du pipeline
+ * @return array
+ */
 function declinaisons_recuperer_fond($flux) {
 	$fond = $flux['args']['fond'];
 	$contexte = $flux['args']['contexte'];
@@ -32,6 +48,15 @@ function declinaisons_recuperer_fond($flux) {
 	return $flux;
 }
 
+/**
+ * Modifier le tableau retourné par la fonction charger d’un formulaire CVT.
+ *
+ * @pipeline formulaire_charger
+ *
+ * @param array $flux
+ *        	Données du pipeline
+ * @return array
+ */
 function declinaisons_formulaire_charger($flux) {
 	$form = $flux['args']['form'];
 
@@ -42,7 +67,15 @@ function declinaisons_formulaire_charger($flux) {
 	return ($flux);
 }
 
-// declare l'object pour le Plugin shop https://github.com/abelass/shop
+/**
+ * Declare l'object pour le Plugin shop https://github.com/abelass/shop.
+ *
+ * @pipeline shop_objets
+ *
+ * @param array $flux
+ *        	Données du pipeline
+ * @return array
+ */
 function declinaisons_shop_objets($flux) {
 	$flux['data']['declinaisons'] = array(
 		'action' => 'declinaisons',
