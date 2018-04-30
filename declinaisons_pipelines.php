@@ -12,61 +12,6 @@
 if (!defined('_ECRIRE_INC_VERSION'))
 	return;
 
-
-/**
- * Modifie le résultat de compilation d’un squelette
- *
- * @pipeline recuperer_fond
- *
- * @param array $flux
- *        	Données du pipeline
- * @return array
- */
-function declinaisons_recuperer_fond($flux) {
-	$fond = $flux['args']['fond'];
-	$contexte = $flux['args']['contexte'];
-
-	// inclure le champ déclinaison
-	if ($fond == 'formulaires/prix') {
-		include_spip('inc/config');
-		$afficher_prix = recuperer_fond('formulaires/inc-prix_affichage', $contexte);
-		$declinaison_champs = recuperer_fond('formulaires/inc-prix_champ', $contexte);
-
-		$patterns = array(
-			'/<!--fini champs!-->/',
-			'/<div class="liste prix">(.*?)<\/div>/ims'
-		);
-		$replacements = array(
-			'<!--fini champs!-->' . $declinaison_champs,
-			$afficher_prix
-		);
-		$rep = preg_replace($patterns, $replacements, $flux['data']['texte'], 1);
-
-		$flux['data']['texte'] = $rep;
-	}
-
-	return $flux;
-}
-
-/**
- * Modifier le tableau retourné par la fonction charger d’un formulaire CVT.
- *
- * @pipeline formulaire_charger
- *
- * @param array $flux
- *        	Données du pipeline
- * @return array
- */
-function declinaisons_formulaire_charger($flux) {
-	$form = $flux['args']['form'];
-
-	// cré un contact si pas encore existant
-	if ($form == 'prix') {
-		$flux['data']['_hidden'] .= '<input type="hidden" name="objet_titre" value="declinaison">';
-	}
-	return ($flux);
-}
-
 /**
  * Declare l'object pour le Plugin shop https://github.com/abelass/shop.
  *
@@ -81,6 +26,47 @@ function declinaisons_shop_objets($flux) {
 		'action' => 'declinaisons',
 		'nom_action' => _T('declinaison:titre_declinaisons'),
 		'icone' => 'declinaisons-16.png'
+	);
+
+	return $flux;
+}
+
+/**
+ *
+ * @pipeline prix_objet_champs_extras
+ *
+ * @param array $flux
+ *        	Données du pipeline
+ * @return array
+ */
+function declinaisons_prix_objet_champs_extras($flux) {
+
+	$flux['data'] = array (
+		array(
+			'saisie' => 'hidden',
+			'options' => array(
+				'nom' => 'prix_extension_objet',
+				'defaut' => 'declinaison',
+			)
+		),
+		array(
+			'saisie' => 'declinaisons',
+			'options' => array(
+				'nom' => 'id_prix_extension_objet',
+				'label' => _T('declinaison:choisir_declinaison'),
+				'option_intro' => _T('declinaison:info_aucun_declinaison'),
+				'defaut' => $flux['id_prix_extension_objet'],
+				'texte' => 'texte',
+			)
+		),
+		array(
+			'saisie' => 'ajouter_action',
+			'options' => array(
+				'nom' => 'ajouter_declinaison',
+				'label_action' => _T('declinaison:icone_creer_declinaison'),
+				'action' => 'declinaison_edit',
+			)
+		),
 	);
 
 	return $flux;
