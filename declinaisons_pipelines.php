@@ -32,31 +32,24 @@ function declinaisons_shop_objets($flux) {
 }
 
 /**
+ * Déclare les champs extras pour le formulaire prix.
  *
- * @pipeline prix_objet_champs_extras
+ * @pipeline prix_objets_extensions
  *
  * @param array $flux
  *        	Données du pipeline
  * @return array
  */
-function declinaisons_prix_objet_champs_extras($flux) {
+function declinaisons_prix_objets_extensions($flux) {
 
 	$flux['data'] = array (
 		array(
-			'saisie' => 'hidden',
-			'options' => array(
-				'nom' => 'prix_extension_objet',
-				'defaut' => 'declinaison',
-			)
-		),
-		array(
 			'saisie' => 'declinaisons',
 			'options' => array(
-				'nom' => 'id_prix_extension_objet',
+				'nom' => 'id_prix_extension_declinaison',
 				'label' => _T('declinaison:choisir_declinaison'),
 				'option_intro' => _T('declinaison:info_aucun_declinaison'),
 				'defaut' => $flux['id_prix_extension_objet'],
-				'texte' => 'texte',
 			)
 		),
 		array(
