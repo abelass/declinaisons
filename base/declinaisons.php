@@ -1,8 +1,12 @@
 <?php
 /**
- * Plugin Déclinaisons Prix
- * (c) 2012 Rainer Müller
- * Licence GNU/GPL
+ * Déclarations relatives à la base de données.
+ *
+ * @plugin     Déclinaisons Prix
+ * @copyright  2012 - 2018
+ * @author     Rainer Müller
+ * @licence    GNU/GPL
+ * @package    SPIP\Promotions_commandes\Vase
  */
 if (!defined('_ECRIRE_INC_VERSION'))
 	return;
@@ -13,10 +17,6 @@ if (!defined('_ECRIRE_INC_VERSION'))
 function declinaisons_declarer_tables_interfaces($interfaces) {
 	$interfaces['table_des_tables']['declinaisons'] = 'declinaisons';
 	return $interfaces;
-}
-function declinaisons_declarer_tables_principales($tables_principales) {
-	$tables_principales['spip_prix_objets']['field']['id_declinaison'] = "bigint(21) NOT NULL";
-	return $tables_principales;
 }
 
 /**
